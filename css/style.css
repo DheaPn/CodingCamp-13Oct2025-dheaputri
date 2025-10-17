@@ -1,0 +1,406 @@
+/* ===== GENERAL RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  background: #2a0d21;
+  color: #e0e1dd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.container {
+  background: #3b1b30;
+  padding: 30px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 600px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #e0e1dd;
+  font-size: 2rem;
+  letter-spacing: 2px;
+}
+
+/* ===== BAGIAN FORM ===== */
+.top {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.top input,
+.top button {
+  padding: 12px;
+  border-radius: 5px;
+  border: none;
+  font-size: 1rem;
+}
+
+#taskInput {
+  background: #f7f4f6;
+  flex: 1;
+  color: #000000;
+}
+
+#taskInput::placeholder {
+  color: #888888;
+}
+
+#taskInput:focus {
+  outline: none;
+  box-shadow: 0 0 5px #e36ec0;
+}
+
+#dateInput {
+  background: #f7f4f6;
+  width: 180px;
+  color: #000000;
+}
+
+#dateInput::placeholder {
+  color: #000000;
+}
+
+#dateInput:focus {
+  outline: none;
+  box-shadow: 0 0 5px #e36ec0;
+}
+
+#addTaskButton {
+  background: #e36ec0;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+  width: 50px;
+  font-size: 0.9rem;
+}
+
+#addTaskButton:hover {
+  background: #de4ed7;
+  transform: scale(1.05);
+}
+
+#addTaskButton:active {
+  transform: scale(0.95);
+}
+
+.error-message {
+  display: block;
+  color: #ef4444;
+  font-size: 0.85rem;
+  margin-bottom: 10px;
+  min-height: 18px;
+}
+
+/* ===== BAGIAN FILTER & HAPUS ===== */
+.middle {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 15px;
+  align-items: center;
+}
+
+.middle select,
+.middle button {
+  padding: 10px 15px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+#filterButton {
+  background: #774175;
+  color: #fff;
+  flex: 0 0 auto;
+  min-width: 120px;
+}
+
+#filterButton:hover {
+  background: #8a4a8a;
+}
+
+#filterButton:focus {
+  outline: none;
+  box-shadow: 0 0 5px #e36ec0;
+}
+
+#deleteAllButton {
+  background: #e36ec0;
+  color: #fff;
+  flex: 0 0 auto;
+}
+
+#deleteAllButton:hover {
+  background: #de4ed7;
+}
+
+#deleteAllButton:active {
+  transform: scale(0.98);
+}
+
+/* ===== BAGIAN TABEL ===== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #2a0d21;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+thead {
+  background: #2a0d21;
+}
+
+th {
+  padding: 12px;
+  text-align: center;
+  color: #e0e1dd;
+  font-weight: 700;
+  border-bottom: 2px solid #3b1b30;
+}
+
+td {
+  padding: 12px;
+  text-align: center;
+  border-bottom: 1px solid #3b1b30;
+  color: #e0e1dd;
+}
+
+tbody tr {
+  transition: 0.3s;
+}
+
+tbody tr:hover {
+  background: #3b1b30;
+}
+
+tbody tr:last-child {
+  border-bottom: none;
+}
+
+.empty-row {
+  text-align: center;
+  color: #888888;
+}
+
+.empty-row td {
+  padding: 40px 12px;
+}
+
+/* ===== TASK STATUS ===== */
+.status-done {
+  text-decoration: line-through;
+  color: #76c893;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.status-pending {
+  background: rgba(227, 110, 192, 0.2);
+  color: #e36ec0;
+}
+
+.status-today {
+  background: rgba(255, 193, 7, 0.2);
+  color: #ffc107;
+}
+
+.status-overdue {
+  background: rgba(239, 68, 68, 0.2);
+  color: #ef4444;
+}
+
+.status-completed {
+  background: rgba(118, 200, 147, 0.2);
+  color: #76c893;
+}
+
+/* ===== ACTION BUTTONS ===== */
+.action-buttons {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-checkbox {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  accent-color: #76c893;
+  border: 2px solid #3b1b30;
+  border-radius: 4px;
+  background: #2a0d21;
+  transition: 0.3s;
+}
+
+.btn-checkbox:hover {
+  border-color: #76c893;
+}
+
+.action-btn {
+  padding: 6px 12px;
+  margin: 0 2px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.complete-btn {
+  background: #06d6a0;
+  color: #ffffff;
+}
+
+.complete-btn:hover {
+  background: #05c39f;
+  transform: scale(1.05);
+}
+
+.delete-btn {
+  background: #ef233c;
+  color: #ffffff;
+}
+
+.delete-btn:hover {
+  background: #d91e2f;
+  transform: scale(1.05);
+}
+
+.action-btn:active {
+  transform: scale(0.98);
+}
+
+/* ===== ANIMASI ===== */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+tbody tr {
+  animation: slideIn 0.3s ease;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 768px) {
+  .container {
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+  }
+
+  .top {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .top input,
+  .top button {
+    padding: 10px;
+  }
+
+  #dateInput {
+    width: 100%;
+  }
+
+  #addTaskButton {
+    width: 100%;
+  }
+
+  .middle {
+    flex-direction: column;
+  }
+
+  #filterButton,
+  #deleteAllButton {
+    width: 100%;
+  }
+
+  th,
+  td {
+    padding: 8px 4px;
+    font-size: 0.9rem;
+  }
+
+  .status-badge {
+    padding: 4px 8px;
+    font-size: 0.75rem;
+  }
+
+  .action-btn {
+    padding: 4px 8px;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 1.3rem;
+  }
+
+  .top input,
+  .top button {
+    padding: 8px;
+    font-size: 0.9rem;
+  }
+
+  th,
+  td {
+    padding: 6px 2px;
+    font-size: 0.8rem;
+  }
+
+  .status-badge {
+    padding: 3px 6px;
+    font-size: 0.7rem;
+  }
+
+  .action-btn {
+    padding: 3px 6px;
+    font-size: 0.75rem;
+  }
+
+  .btn-checkbox {
+    width: 20px;
+    height: 20px;
+  }
+}

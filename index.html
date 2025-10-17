@@ -4,22 +4,42 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-
-    <!-- CSS External File -->
-    <link rel="stylesheet" href="css\style.css"
+    <link rel="stylesheet" href="css/style.css" />
   </head>
-
   <body>
-    <!-- Header Section -->
-    <header></header>
-
-    <!-- Main Content Section -->
-    <main></main>
-
-    <!-- Footer Section -->
-    <footer></footer>
-
-    <!-- Javascript External File -->
-    <script src="js\script.js"></script>
+    <div class="container">
+      <h1>TO DO LIST</h1>
+      <div class="top">
+        <input type="text" id="taskInput" placeholder="Add a todo..." />
+        <input type="date" id="dateInput" />
+        <button id="addTaskButton">Add</button>
+      </div>
+      <div class="middle">
+        <select id="filterButton">
+          <option value="all">All</option>
+          <option value="pending">Pending</option>
+          <option value="completed">Completed</option>
+        </select>
+        <button id="deleteAllButton">Delete All</button>
+      </div>
+      <div class="bottom">
+        <table>
+          <thead>
+            <tr>
+              <th>Task</th>
+              <th>Due Date</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="todoList">
+            <tr>
+              <td colspan="4" style="text-align: center">No task found</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
   </body>
+  <script src="js/script.js"></script>
 </html>
