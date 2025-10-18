@@ -23,6 +23,8 @@ body {
   width: 100%;
   max-width: 600px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
 }
 
 h1 {
@@ -403,4 +405,20 @@ tbody tr {
     width: 20px;
     height: 20px;
   }
+}
+footer {
+  text-align: center;
+  margin-top: 20px;
+  margin-left: -30px;
+  margin-right: -30px;
+  margin-bottom: -30px;
+  padding: 15px 30px;
+  color: #888888;
+  font-size: 0.9rem;
+  border-top: 1px solid #3b1b30;
+  background: #3b1b30;
+}
+
+footer p {
+  margin: 0;
 }

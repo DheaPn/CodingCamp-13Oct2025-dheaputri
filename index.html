@@ -4,25 +4,31 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <!-- CSS External File -->
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <div class="container">
-      <h1>TO DO LIST</h1>
-      <div class="top">
+    <section class="container">
+      <!-- Header Section -->
+      <header>
+        <h1>TO DO LIST</h1>
+      </header>
+
+      <!-- Content Section -->
+      <section class="top">
         <input type="text" id="taskInput" placeholder="Add a todo..." />
         <input type="date" id="dateInput" />
         <button id="addTaskButton">Add</button>
-      </div>
-      <div class="middle">
+      </section>
+      <section class="middle">
         <select id="filterButton">
           <option value="all">All</option>
           <option value="pending">Pending</option>
           <option value="completed">Completed</option>
         </select>
         <button id="deleteAllButton">Delete All</button>
-      </div>
-      <div class="bottom">
+      </section>
+      <section class="bottom">
         <table>
           <thead>
             <tr>
@@ -38,8 +44,11 @@
             </tr>
           </tbody>
         </table>
-      </div>
-    </div>
+        <footer>
+          <p>&copy; 2025 Dhea To Do List App</p>
+        </footer>
+      </section>
+    </section>
   </body>
   <script src="js/script.js"></script>
 </html>
