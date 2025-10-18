@@ -118,7 +118,7 @@ h1 {
 
 .middle select,
 .middle button {
-  padding: 10px 15px;
+  padding: 10px 10px;
   border-radius: 5px;
   border: none;
   cursor: pointer;
@@ -147,6 +147,7 @@ h1 {
   background: #e36ec0;
   color: #fff;
   flex: 0 0 auto;
+  padding: 5px 9px;
 }
 
 #deleteAllButton:hover {
